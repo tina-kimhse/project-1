@@ -49,4 +49,11 @@ app.get('/getAllUsers', function (req, res) {
   //res.send('Hello World')
 })
 
-app.listen(3000)
+// es6 : import(가져오기), export(내보내기)
+// CommonJS : require(가져오기), module.exports 또는 exports (내보내기)
+const port = 3000; // 개발중: 3000, 개발완료: 8080 or 80
+const setting = {
+  app,
+  port
+}
+export default setting;
