@@ -4,6 +4,6 @@ const router = express.Router();
 
 router.get("/users", userController.getAllusers);
 router.get("/user/:id", userController.getOneUser); // 동적 라우팅(id가 바뀌는)
-router.post("/user", userController.addOneUser);
+router.post("/user", userController.addUser);
 
 export default router;

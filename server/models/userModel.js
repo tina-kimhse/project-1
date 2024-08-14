@@ -38,16 +38,16 @@ const getOneUser = async (userId) => {
     }
 } 
 
-const addOneUser = async (userId, userName, userEmail) => {
+const addUser = async (id, pwd, name, nick, email, hint) => {
     let conn; // 연결설정 변수(연결POOL)
     try {
         conn = await pool.getConnection();
-        const rows = await conn.query("INSERT INTO users (id, name, email) VALUES (?,?,?)", [userId, userName, userEmail]);
+        const rows = await conn.query("INSERT INTO users (id, pwd, name, nickname, email, pwd_hint) VALUES (?,?,?,?,?,?)", [id, pwd, name, nick, email, hint]);
         return rows;
     } catch(err) {
         console.log(err);
     } finally {
-        if(conn) conn.end();
+        if(conn) conn.end(); // .end() : 연결(POOL)중단  vs   .release() : 연결 해제
     }
 }
 // 객체(Object): 변수(문자열, 숫자, 논리), 함수, 클래스, 심볼...거의 모든
@@ -55,7 +55,7 @@ const addOneUser = async (userId, userName, userEmail) => {
 const userModel = {
     getAllUsers,
     getOneUser,
-    addOneUser
+    addUser
 }
 
 export default userModel;
