@@ -32,19 +32,19 @@ const addUser = async (req, res) => {
     const {id, pwd, name, nick, email, hint} = req.body;
     try {
         const users = await userModel.addUser(id, pwd, name, nick, email, hint); // 사용자 정보를 모두 조회해서 users 변수에 담아
-        res.status(200).json({
-            code: 201,
-            status: true,
-            message: "사용자 등록 성공"
-        });        
-        //res.redirect("/"); // 첫페이지로 이동하기
+        if (users) {
+            res.status(200).json({
+                status: 'success',
+                message: "사용자 등록 성공!",                
+            });
+        } else {
+            res.status(500).json({
+                status: 'fail',
+                message: "사용자 등록 실패!"
+            })
+        }
     } catch (err) {
         console.log(err);
-        res.status(500).json({
-            code: 501,
-            status: false,
-            message: "데이터베이스 연결 실패"
-        })
     }
 }
 // Object(객체) : 여러가지 변수, 값, 함수, 객체, 클래스,..포함할 수 있는 자바스크립트 데이터 타입
