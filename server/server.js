@@ -15,6 +15,9 @@ app.use(express.json()); // json 포맷 인식
 app.use(cors()); // CORS policy
 // route : .get(): 받기, .post(): 보내기, .put(): 보내서 부분 수정, .delete() : 보내서 삭제
 // RESTful API : REpresentational (대표성 있는 방식으로 요청 URL을 생성하는 규칙)
+app.get("/", (req, res) => {
+  res.sendFile(__dirname+"/public/index.html");
+})
 app.use("/", userRouter);
 
 // es6 : import(가져오기), export(내보내기)
