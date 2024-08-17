@@ -20,11 +20,11 @@ window.addEventListener("DOMContentLoaded", function(){
                     <td>${el.id}</td>
                     <td>${el.name}</td>
                     <td>${el.email}</td>
-                    <td>${el.reg_date}</td>
+                    <td>${el.reg_date}</td>        
                     <td>${el.sns}</td>
                     <td>${el.intro}</td>
                 `;
-                usersTbl.appendChild(row);
+                usersTbl.appendChild(row);         
             });
             loadBtn.disabled = true; // 한번 클릭한 이후엔 더이상 클릭할수 없게 disabled 처리
         });

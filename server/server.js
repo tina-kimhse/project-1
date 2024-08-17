@@ -4,7 +4,7 @@ const __filename = fileURLToPath(import.meta.url);   // 👈 추가
 
 import express from "express";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config();                                                 
 import cors from "cors";
 import userRouter from "./routes/userRoutes.js"
 

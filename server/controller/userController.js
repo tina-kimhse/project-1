@@ -54,4 +54,4 @@ const userController = {
     addUser
 }
 
-export default userController;
+export default userController;          

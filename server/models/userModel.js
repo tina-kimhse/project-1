@@ -61,4 +61,4 @@ const userModel = {
     addUser
 }
 
-export default userModel;
+export default userModel;             

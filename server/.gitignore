@@ -8,4 +8,4 @@
 .py
 .env
 .env.local
-.env.local.development
+.env.local.development        

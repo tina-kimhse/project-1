@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const response = await result.json();
             if (response.status === 'success') {
                 // alert("회원가입 성공!");
-                location.href = 'https://www.naver.com';
+                location.href = 'https://www.naver.com';   
             }
         }
     })
