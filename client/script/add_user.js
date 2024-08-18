@@ -26,4 +26,3 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     })
 })
-//수정해보아요
